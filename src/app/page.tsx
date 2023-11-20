@@ -6,8 +6,8 @@ import { useState } from 'react';
 
 export default function Home() {
   const [translatedResult, setTranslatedResult] = useState({
-    translatedArray: [],
-    textArray: []
+    translatedArray: [{}],
+    textArray: [{}]
   });
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldValue = e.target.value;
@@ -41,7 +41,7 @@ export default function Home() {
         <input className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="codon" type="text" placeholder="Enter a Codon (e.g. AUG)" onChange={handleInput} />
       </div>
       <div className= "font-display">
-        <p className="font-display text-3xl" contenteditable="false" onInput={handleInput2}>{
+        <p className="font-display text-3xl" contentEditable="false" onInput={handleInput2}>{
           translatedResult.textArray.map((item, index) => (
             <span key={`Text-${index}`} className={`text-[${item.color}]`}>{item.codon}</span>
           ))
