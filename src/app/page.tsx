@@ -42,8 +42,8 @@ export default function Home() {
       </div>
       <div className= "font-display">
         <p className="font-display text-3xl" contenteditable="false" onInput={handleInput2}>{
-          translatedResult.textArray.map((item) => (
-            <span className={`text-[${item.color}]`}>{item.codon}</span>
+          translatedResult.textArray.map((item, index) => (
+            <span key={`Text-${index}`} className={`text-[${item.color}]`}>{item.codon}</span>
           ))
         }</p>
       </div>
@@ -53,7 +53,7 @@ export default function Home() {
             className={`font-display bg-[${item.color}] text-white font-bold py-2 px-4 rounded space-x-5`}
             type='submit'
             disabled={true}
-            id={`Button-${index}`}
+            key={`Button-${index}`}
           >
             {item.aminoAcid}
           </button>
