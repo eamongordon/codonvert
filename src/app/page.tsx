@@ -9,13 +9,13 @@ export default function Home() {
     translatedArray: [],
     textArray: []
   });
-  const handleInput = (e) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldValue = e.target.value;
     const result = translate(fieldValue);
     setTranslatedResult(result);
     console.log(translatedResult.translatedArray)
   }
-  const handleInput2 = (e) => {
+  const handleInput2 = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldValue = e.target;
     const plainFieldValue = fieldValue.outerHTML.replace(/<[^>]+>/g, '');
     const result = translate(plainFieldValue);
