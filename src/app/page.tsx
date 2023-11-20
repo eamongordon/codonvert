@@ -7,13 +7,13 @@ import { useState } from 'react';
 export default function Home() {
   const [translatedResult, setTranslatedResult] = useState({
     translatedArray: [{
-      aminoAcid: 'Methionine',
-      codon: 'AUG',
-      color: '#1e8a1a',
+      aminoAcid: '',
+      codon: '',
+      color: '',
     }],
     textArray: [{
-      codon: 'Methionine',
-      color: 'AUG'
+      codon: '',
+      color: ''
     }]
   });
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
