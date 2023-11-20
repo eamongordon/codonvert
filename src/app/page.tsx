@@ -6,8 +6,15 @@ import { useState } from 'react';
 
 export default function Home() {
   const [translatedResult, setTranslatedResult] = useState({
-    translatedArray: [{}],
-    textArray: [{}]
+    translatedArray: [{
+      codon: '',
+      color: '',
+      aminoAcid: ''
+    }],
+    textArray: [{
+      codon: '',
+      color: ''
+    }]
   });
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fieldValue = e.target.value;
