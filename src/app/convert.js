@@ -175,8 +175,7 @@ export function translate(inputString) {
             } else {
                 return codonObj
             }
-        });
-        splitStringArray = splitStringArray.filter((obj) => obj.aminoAcid);
+        }).filter((obj) => obj.aminoAcid);
     }
     /*
         const returnAminoAcidMap = finishedAminoAcidArray.map((item, index) => {
