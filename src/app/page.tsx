@@ -45,7 +45,7 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="font-display font-semibold">
+      <div className="font-display font-semibold text-center">
         <h3>Convert any mRNA sequence to DNA.</h3>
       </div>
       <div className="font-display">
