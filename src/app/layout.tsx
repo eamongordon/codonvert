@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google';
 import './globals.css';
-//import { FC, PropsWithChildren } from "react";
 
 export const metadata: Metadata = {
   title: 'Codonvert | mRNA to Amino Acid Converter',
@@ -13,10 +12,6 @@ const montserrat = Montserrat({
   variable: "--display-font",
 });
 
-const montserrat2 = Montserrat({
-  subsets: ['latin'],
-  variable: "--body-font",
-});
 
 export default function RootLayout({
   children,
@@ -24,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${montserrat2.variable}`}>
-      <body>{children}</body>
+    <html lang="en">
+      <body className={montserrat.className}>
+        {children}
+      </body>
     </html>
   )
 }

@@ -98,12 +98,12 @@ const startCodons = ["UUG", "AUG", "GUG"];
 
 //const inputString = "UUGGGUAGAUAG";
 
-export function translate(inputString) {
+export function translate(inputString: string) {
     let loopedString = "";
 
-    let splitStringArray = [];
+    let splitStringArray: { codon: string; color?: string; aminoAcid?: string }[] = [];
 
-    let textCodonArray = [];
+    let textCodonArray: { codon: string; color?: string; }[] = [];
 
     let finishedAminoAcidArray = [];
 
@@ -122,25 +122,25 @@ export function translate(inputString) {
         }
     };
 
-    function loopSplitStringArray(startindex) {
+    function loopSplitStringArray(startindex: number) {
         for (let i = startindex; i < inputString.length; i++) {
             if (i === startindex) {
                 const codon = inputString.slice(i + 1, i + 4);
                 const stopCodonsObj = list.find((obj) => obj.name === 'Stop');
-                if (stopCodonsObj.codons.includes(codon)) {
+                if (stopCodonsObj?.codons.includes(codon)) {
                     const splitStringArrayJoined = splitStringArray.map((obj) => obj.codon).join('');
                     const stopString = inputString.replace(splitStringArrayJoined, '');
                     textCodonArray.push({ codon: stopString, color: 'black' });
                 }
                 splitStringArray.push({ codon: codon, color: '#dbd753' });
                 textCodonArray.push({ codon: codon, color: '#dbd753' });
-                if (stopCodonsObj.codons.includes(codon)) {
+                if (stopCodonsObj?.codons.includes(codon)) {
                     break;
                 }
             } else {
                 if (((i - startindex) % 3) === 0) {
                     const codon = inputString.slice(i + 1, i + 4);
-                    let returnObj = {
+                    let returnObj: {codon: string, color?: string} = {
                         codon: codon
                     };
                     if ((i - startindex) % 2 === 0) {
@@ -149,7 +149,7 @@ export function translate(inputString) {
                         returnObj.color = '#621470';
                     }
                     const stopCodonsObj = list.find((obj) => obj.name === 'Stop');
-                    if (stopCodonsObj.codons.includes(codon)) {
+                    if (stopCodonsObj?.codons.includes(codon)) {
                         returnObj.color = '#9c0000';
                         splitStringArray.push(returnObj);
                         textCodonArray.push(returnObj);
