@@ -46,7 +46,7 @@ export default function Home() {
         />
       </div>
       <div className="font-display font-semibold text-center">
-        <h3>Convert any mRNA sequence to DNA.</h3>
+        <h3>Convert any mRNA sequence to Amino Acids.</h3>
       </div>
       <div className="font-display">
         <input className="shadow appearance-none rounded w-full py-4 px-3 leading-tight focus:outline-none focus:shadow-outline dark:bg-neutral-800" id="codon" type="text" placeholder="Enter a Codon (e.g. AUG)" onChange={handleInput} />
